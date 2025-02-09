@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse - Your Digital Library Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon moon-icon"></i>
+    </div>
+
+    <header class="main-header">
+        <h1 class="glow-text">BookVerse</h1>
+        <p class="tagline">Your Digital Library Haven</p>
+    </header>
+
+    <div class="container">
+        <div class="header-controls">
+            <div class="controls">
+                <select id="genreFilter">
+                    <option value="all">All Genres</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="sci-fi">Science Fiction</option>
+                    <option value="romance">Romance</option>
+                    <option value="horror">Horror</option>
+                    <option value="self-help">Self-Help</option>
+                    <option value="biography">Biography</option>
+                </select>
+                <select id="sortSelect">
+                    <option value="">Sort by...</option>
+                    <option value="titleAsc">Title (A-Z)</option>
+                    <option value="titleDesc">Title (Z-A)</option>
+                    <option value="authorAsc">Author (A-Z)</option>
+                    <option value="authorDesc">Author (Z-A)</option>
+                    <option value="recent">Recently Added</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for books...">
+                    <button id="searchButton">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <div class="library-section">
+                <div class="my-library">
+                    <h2>My Library</h2>
+                    <div id="myLibrary" class="library-grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="favorites-section">
+                    <h2>Favorites</h2>
+                    <div id="favorites" class="library-grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="read-books-section">
+                    <h2>Read Books</h2>
+                    <div id="readBooks" class="library-grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
